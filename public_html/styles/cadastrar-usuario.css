@@ -1,0 +1,39 @@
+
+.vermelho{
+    color:red !important;
+}
+
+.azul{
+    color:#03a9f4 !important;
+}
+
+.clarear{
+    opacity:0.7;
+}
+
+#tab-content-2 md-content{
+    text-align: center;
+}
+#tab-content-2{
+    
+}
+#tab-content-2 div[ng-messages]{
+    text-align: left;
+}
+#tab-content-2 input{
+    width: 300px;
+}
+
+.formAutenticacao{
+    text-align: center;
+}
+
+md-content {
+    overflow-y: visible ;
+    overflow-x: visible ;
+}
+
+md-content[md-scroll-y] {
+     overflow-y: visible ; 
+     overflow-x: visible ; 
+}
