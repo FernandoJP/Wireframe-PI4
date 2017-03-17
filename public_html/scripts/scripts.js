@@ -7,7 +7,7 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog'
         $scope.email = true;
         $scope.error = false;
         $scope.date = new Date();
-
+        $scope.paginaAtual = 'home';
         var self = this;
         self.selectedIndex = 0;
         self.displayMap = function () {
@@ -36,6 +36,10 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog'
             alert('teste');
         }
 
+        $scope.setPaginaAtual = function(paginaAtual){
+            $scope.paginaAtual = paginaAtual;
+        }
+        
         $scope.admin = [{
                 link: '',
                 title: 'Cadastrar Produto',

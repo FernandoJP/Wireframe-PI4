@@ -9,16 +9,13 @@
         <link href="plugins/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet"> 
     </head>
     <body layout="row" ng-controller="AppCtrl">
-
-        <div ng-include="'menu.html'"></div>
         <div ng-include="'header.html'"></div>
-
         <div layout="column" class="relative" layout-fill role="main">
             <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
                 <ng-md-icon icon="menu"></ng-md-icon>
             </md-button>
-            <div ng-include="'cadastrar-usuario.html'"></div>
-
+            <div ng-include="'cadastrar-usuario.html'" ng-if="paginaAtual == 'cadastrarUsuario'"></div>
+            <div ng-include="'home.html'" ng-if="paginaAtual == 'home'"></div>
         </div>
         <script src="plugins/jquery/jquery-3.1.1.min.js"></script>
         <!-- Angular Material Dependencies -->
@@ -31,7 +28,5 @@
         <script src="plugins/cidade-estado/cidades-estados.js"></script> 
         <script src="plugins/angular-sweet-alert/sweetalert.min.js"></script>
         <script src="scripts/scripts.js"></script>
-
-
     </body>
 </html>
