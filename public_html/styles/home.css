@@ -1,0 +1,6 @@
+md-card-title-text span:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    transition:0.2s;
+    color:#106cc8;
+}

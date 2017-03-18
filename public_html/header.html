@@ -8,68 +8,40 @@
     <!-- BEGIN LEFT SIDE NAVIGATION -->
     <md-content flex role="navigation">
         <ul class="docs-menu">
-            <!-- SHIPPING MENU OPTION -->
-            <li class="parent-list-item">
-            <md-button class="md-button-toggle" ng-click="toggleMenu('#docs-menu-shipping')" aria-controls="docs-menu-shipping" aria-expanded="{{isOpen('#docs-menu-shipping')}}">
-                <div flex layout="row">
-                    <md-icon>airplanemode_active</md-icon>
-                    Shipping
-                    <span flex layout="row"></span>
-                    <span aria-hidden="true" class="md-toggle-icon" ng-class="{'toggled' : isOpen('#docs-menu-shipping')}">
-                        <md-icon md-svg-src="md-toggle-arrow"></md-icon>
-                    </span>
-                </div>
-                <span class="md-visually-hidden">
-                    Toggle {{isOpen('#docs-menu-shipping') ? 'expanded' : 'collapsed'}}
-                </span>
-            </md-button>
-            <ul id="docs-menu-shipping" class="menu-toggle-list hide">
-                <li>
-                <md-button ng-class="{'active' : isSelected()}" href="#" ng-click="focusSection()" aria-label="Receive Shipments">
-                    Receive Shipments
-                    <span class="_md-visually-hidden" ng-if="isSelected()">current page</span>
-                </md-button>
-                </li>
-            </ul>
-            </li>
 
             <li class="parent-list-item">
-            <md-list>
-        <md-subheader>Cadastro</md-subheader>
-
-                    <md-list-item>
-                        <a>
-                            <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                                <div class="inset">
-                                    <i class="fa fa-cart-plus fa-2x"></i>
-                                </div>
-                                <div class="inset">Cadastrar Produto
-                                </div>
-                            </md-item-content> 
-                        </a>
-                    </md-list-item>
-                    <md-list-item>
-                        <a>
-                            <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                                <div class="inset">
-                                    <i class="fa fa-user-plus fa-2x"></i>
-                                </div>
-                                <div class="inset">Cadastrar Usuário
-                                </div>
-                            </md-item-content>
-                        </a>
-                    </md-list-item>
-                                <md-list-item>
-                        <a>
-                            <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                                <div class="inset">
-                                    <img src="images/icon-add-local-entrega.png"/>
-                                </div>
-                                <div class="inset">Cadastrar Local de Entrega
-                                </div>
-                            </md-item-content>
-                        </a>
-                    </md-list-item>
+            <md-list id="menu-mobile">
+                <md-subheader>Cadastro</md-subheader>
+                <md-list-item style="margin-top:-12px;">
+                    <a href="cadastrar-produto.html">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <i class="fa fa-cart-plus fa-2x"></i>
+                            </div>
+                            <div class="inset">Cadastrar Produto</div>
+                        </md-item-content> 
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a href="cadastrar-usuario.html">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <i class="fa fa-user-plus fa-2x"></i>
+                            </div>
+                            <div class="inset">Cadastrar Usuário</div>
+                        </md-item-content>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a href="cadastrar-local-entrega.html">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <img src="images/icon-add-local-entrega.png"/>
+                            </div>
+                            <div class="inset">Cadastrar Local de Entrega</div>
+                        </md-item-content>
+                    </a>
+                </md-list-item>
             </md-list>
             </li>
         </ul>
@@ -94,25 +66,33 @@
                 <md-menu>
                     <md-button class="md-primary capitalize" ng-click="$mdOpenMenu()"><span class="md-alt-text">Página Inicial</span></md-button>
                 </md-menu>
-                <md-menu>
-            <button ng-click="$mdOpenMenu()">Cadastros</button>
-             <md-menu-content>
-              <md-menu-item class="md-indent">
-                <md-button ng-click="setPaginaAtual('cadastrarProduto');">
-                  <span class="md-alt-text">Cadastrar Produto</span>
-                </md-button>
-              </md-menu-item>
-              <md-menu-item class="md-indent">
-                <md-button ng-click="setPaginaAtual('cadastrarUsuario');">
-                  <span class="md-alt-text">Cadastrar Usuário</span>
-                </md-button>
-              </md-menu-item>
-              <md-menu-item class="md-indent">
-                <md-button ng-click="ctrl.sampleAction('cut', $event)">
-                  <span class="md-alt-text">Cadastrar Local de Entrega</span>
-                </md-button>
-              </md-menu-item>
-            </md-menu-content>
-          </md-menu>
+                <md-menu id="menu-desktop">
+                    <button ng-click="$mdOpenMenu()">Cadastros</button>
+                    <md-menu-content>
+                        <a href="cadastrar-produto.html">
+                            <md-menu-item class="md-indent">
+                                <md-button ng-click="setPaginaAtual('cadastrarProduto');">
+                                    <span class="md-alt-text">Cadastrar Produto</span>
+                                </md-button>
+                            </md-menu-item>
+                        </a>
+                        <a href="cadastrar-usuario.html">
+                            <md-menu-item class="md-indent">
+                                <md-button ng-click="setPaginaAtual('cadastrarUsuario');">
+                                    <span class="md-alt-text">Cadastrar Usuário</span>
+                                </md-button>
+                            </md-menu-item>
+                        </a>
+                        <a href="cadastrar-local-entrega.html">
+                            <md-menu-item class="md-indent">
+                                <md-button ng-click="ctrl.sampleAction('cut', $event)">
+                                    <span class="md-alt-text">Cadastrar Local de Entrega</span>
+                                </md-button>
+                            </md-menu-item>
+                        </a>
+                    </md-menu-content>
+                </md-menu>
             </md-menu-bar>
         </div>
+    </md-toolbar>
+</div>

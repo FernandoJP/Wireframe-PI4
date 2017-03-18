@@ -7,13 +7,12 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog'
         $scope.email = true;
         $scope.error = false;
         $scope.date = new Date();
-        $scope.paginaAtual = 'home';
         var self = this;
         self.selectedIndex = 0;
         self.displayMap = function () {
             self.selectedIndex = 1;
         };
-
+        
         $scope.validarDadosPessoais = function (dadosPessoais, formularioDados) {
             console.log(formularioDados.$valid);
             if (formularioDados.$valid) {
@@ -34,10 +33,6 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog'
 
         $scope.someMethod = function () {
             alert('teste');
-        }
-
-        $scope.setPaginaAtual = function(paginaAtual){
-            $scope.paginaAtual = paginaAtual;
         }
         
         $scope.admin = [{

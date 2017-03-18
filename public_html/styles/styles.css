@@ -14,7 +14,7 @@ md-card {
 }
 md-toolbar {
     .md-button.md-default-theme {
-        border-radius: 99%; // round toolbar buttons
+        border-radius: 99%;
     }
 }
 h2 {
@@ -75,7 +75,7 @@ md-sidenav .fa{
 }
 
 /*Conteúdo do site*/
-#conteudo md-card{
+#conteudo md-card.principal{
     min-height: 600px;
     position: relative;
     top: 84px;
@@ -152,4 +152,18 @@ md-menu-item md-icon{
 
 .capitalize{
     text-transform: capitalize;
+}
+
+#menu-mobile{
+    margin-top:35px;
+}
+
+#menu-mobile a{
+    text-decoration: none !important; 
+    color:#222;
+}
+
+a{
+    text-decoration: none !important; 
+    color:#222;
 }
