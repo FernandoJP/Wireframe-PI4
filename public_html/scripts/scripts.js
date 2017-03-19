@@ -28,6 +28,7 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog'
         }
 
         $scope.toggleSidenav = function (menuId) {
+            console.log('abrindo sidbar');
             $mdSidenav(menuId).toggle();
         };
 

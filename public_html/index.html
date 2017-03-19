@@ -2,6 +2,7 @@
 <html lang="pt-br" ng-app="StarterApp">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width"> 
         <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="plugins/angular-sweet-alert/sweetalert.css">
@@ -25,15 +26,12 @@
             </md-card-title>
 
             <!-- Início da exibição de produtos -->
-            <md-button class="md-primary md-raised"   flex="100"  flex-gt-md="auto">
-                Custom
-            </md-button>
             <div class='md-padding' layout="row" layout-wrap>
                 <md-card ng-repeat="produto in produtos" style="width:230px;">
                     <img ng-src="{{produto.img}}" class="md-card-image" alt="Washed Out" style="max-height: 290px;">
                     <md-card-title>
                         <md-card-title-text>
-                            <span class="md-headline" ng-click="showCustom($event,produto)">{{produto.nome}}</span>
+                            <span class="md-headline" ng-click="showCustom($event, produto)">{{produto.nome}}</span>
                         </md-card-title-text>
                     </md-card-title>
                     <md-card-content>
