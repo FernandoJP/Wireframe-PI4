@@ -20,22 +20,7 @@ md-toolbar {
 h2 {
     font-weight: 400;
 }
-.md-toolbar-tools-bottom {
-    font-size: small;
-    & :last-child {
-        opacity: 0.8;
-    }
-}
-md-toolbar:not(.md-hue-1),
-.md-fab {
 
-}
-md-sidenav {
-    ng-md-icon {
-        position: relative;
-        top: 5px; // adjust for svg viewbox
-    }
-}
 .user-avatar {
     border-radius: 99%;
 }
@@ -166,4 +151,13 @@ md-menu-item md-icon{
 a{
     text-decoration: none !important; 
     color:#222;
+}
+
+.nav-botao-mais{
+    margin-right: 1px !important;
+}
+
+.badge{
+    bottom: 6px;
+    position: relative;
 }

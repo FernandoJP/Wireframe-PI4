@@ -8,7 +8,6 @@
     <!-- BEGIN LEFT SIDE NAVIGATION -->
     <md-content flex role="navigation">
         <ul class="docs-menu">
-
             <li class="parent-list-item">
             <md-list id="menu-mobile">
                 <md-subheader>Cadastro</md-subheader>
@@ -64,28 +63,28 @@
         <div id="topNav" hide show-gt-sm layout="row">
             <md-menu-bar>
                 <md-menu>
-                    <md-button class="md-primary capitalize" ng-click="$mdOpenMenu()"><span class="md-alt-text">Página Inicial</span></md-button>
+                    <md-button class="md-primary capitalize"><span class="md-alt-text">Página Inicial</span></md-button>
                 </md-menu>
                 <md-menu id="menu-desktop">
                     <button ng-click="$mdOpenMenu()">Cadastros</button>
                     <md-menu-content>
                         <a href="cadastrar-produto.html">
                             <md-menu-item class="md-indent">
-                                <md-button ng-click="setPaginaAtual('cadastrarProduto');">
+                                <md-button>
                                     <span class="md-alt-text">Cadastrar Produto</span>
                                 </md-button>
                             </md-menu-item>
                         </a>
                         <a href="cadastrar-usuario.html">
                             <md-menu-item class="md-indent">
-                                <md-button ng-click="setPaginaAtual('cadastrarUsuario');">
+                                <md-button>
                                     <span class="md-alt-text">Cadastrar Usuário</span>
                                 </md-button>
                             </md-menu-item>
                         </a>
                         <a href="cadastrar-local-entrega.html">
                             <md-menu-item class="md-indent">
-                                <md-button ng-click="ctrl.sampleAction('cut', $event)">
+                                <md-button>
                                     <span class="md-alt-text">Cadastrar Local de Entrega</span>
                                 </md-button>
                             </md-menu-item>
@@ -94,5 +93,37 @@
                 </md-menu>
             </md-menu-bar>
         </div>
+        <span flex></span>
+        <md-button
+            class="md-icon-button"
+            aria-label="Favorite"
+            ng-click="ctrl.showToolbarMenu($event, ctrl.favorite)">
+            <i class="material-icons">shopping_cart</i><span class="badge">{{qtdProdutosCarrinho}}</span>
+        </md-button>
+
+        <md-menu id="menu-desktop" md-position-mode="target-right target">
+            <md-button
+                class="md-icon-button nav-botao-mais"
+                aria-label="More"
+                ng-click="$mdOpenMenu()">
+                <i class="material-icons">more_vert</i>
+            </md-button>
+            <md-menu-content>
+                <a href="#">
+                    <md-menu-item class="md-indent">
+                        <md-button>
+                            <span class="md-alt-text"> &nbsp;Dashboard&nbsp; </span>
+                        </md-button>
+                    </md-menu-item>
+                </a>
+                <a href="#">
+                    <md-menu-item class="md-indent">
+                        <md-button>
+                            <span class="md-alt-text"> &nbsp;Logout&nbsp; </span>
+                        </md-button>
+                    </md-menu-item>
+                </a>
+            </md-menu-content>
+        </md-menu>
     </md-toolbar>
 </div>

@@ -14,7 +14,7 @@
         <div ng-include="'header.html'"></div>
 
     <md-content flex md-scroll-y id="conteudo">
-        <md-card class="principal">
+        <md-card class="principal md-whiteframe-6dp">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Produtos</span>
@@ -26,12 +26,13 @@
             </md-card-title>
 
             <!-- Início da exibição de produtos -->
-            <div class='md-padding' layout="row" layout-wrap>
-                <md-card ng-repeat="produto in produtos" style="width:230px;">
-                    <img ng-src="{{produto.img}}" class="md-card-image" alt="Washed Out" style="max-height: 290px;">
+            <div class='md-padding' layout="row" layout-wrap id="produtos">
+                <md-card ng-repeat="produto in produtos" style="width:230px;position:relative;" class="md-whiteframe-3dp">
+                    <div ng-click="showCustom($event, produto)" md-ink-ripple>
+                    <img ng-src="{{produto.img}}" class="md-card-image" alt="Livro {{produto.nome}}" title="Livro {{produto.nome}}" style="max-height: 290px;">
                     <md-card-title>
                         <md-card-title-text>
-                            <span class="md-headline" ng-click="showCustom($event, produto)">{{produto.nome}}</span>
+                            <span class="md-headline">{{produto.nome}}</span>
                         </md-card-title-text>
                     </md-card-title>
                     <md-card-content>
@@ -39,21 +40,20 @@
                             {{produto.preco}}
                         </p>
                     </md-card-content>
+                     </div>
                     <md-card-actions layout="row" layout-align="end center">
-                        <md-button class="md-icon-button">
+                        <md-button class="md-icon-button" ng-click="adicionarAoCarrinho(produto)">
                             <i class="material-icons">add_shopping_cart</i>
                         </md-button>
                         <md-button class="md-raised md-primary">
                             Comprar
                         </md-button>
                     </md-card-actions>
-                    <div>
-                    </div>
+                   
                 </md-card>
             </div>
 
             <!-- Fim da exibição de produtos -->
-
         </md-card>
     </md-content>
 
